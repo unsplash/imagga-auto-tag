@@ -17,13 +17,13 @@ module ImaggaAutoTag
     end
 
     def scrub(threshold = 30)
-      @tags.reject! do |tag|
+      @tags.select! do |tag|
         tag.confidence > threshold
       end
     end
 
     def to_csv
-      @tags.join(',')
+      @tags.collect { |t| t.name }.join(',')
     end
 
   end
