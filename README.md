@@ -1,6 +1,6 @@
 # ImaggaAutoTag
 
-A super simple wrapper for fetching tags for an image URL from the [Imagga Auto Tagging API](http://imagga.com/solutions/auto-tagging.html).
+Ruby client for fetching tags for an image using the [Imagga Auto Tagging API](http://imagga.com/solutions/auto-tagging.html).
 
 ## Installation
 
@@ -42,7 +42,7 @@ results.to_csv
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/imagga_auto_tag/fork )
+1. Fork it ( https://github.com/lukechesser/imagga_auto_tag/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
