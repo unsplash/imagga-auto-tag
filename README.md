@@ -28,7 +28,7 @@ results.tags
 # => array of tags
 
 results.scrub(30)
-# => array of tags with a confidence over 30%
+# => removes tags with a confidence of less than 30
 
 results.tags[0].tap do |tag|
   tag.name # => tag name
@@ -37,7 +37,7 @@ end
 
 results.to_csv
 # => comma delimitted string of tag names
-# => 'tag 1 name, tag 2 name, etc..'
+# => 'tag1,tag2,etc..'
 ```
 
 ## Contributing
