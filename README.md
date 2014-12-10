@@ -1,6 +1,6 @@
 # ImaggaAutoTag
 
-TODO: Write a gem description
+A super simple wrapper for fetching tags for an image URL from the [Imagga Auto Tagging API](http://imagga.com/solutions/auto-tagging.html).
 
 ## Installation
 
@@ -20,7 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = ImaggaAutoTag::Client.new(your_imagga_api_key)
+results = client.fetch("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+
+results.tags
+# => array of tags
+
+results.scrub(30)
+# => array of tags with a confidence over 30%
+
+results.tags[0].tap do |tag|
+  tag.name # => tag name
+  tag.confidence # => tag confidence as a float
+end
+
+results.to_csv
+# => comma delimitted string of tag names
+# => 'tag 1 name, tag 2 name, etc..'
+```
 
 ## Contributing
 
