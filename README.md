@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client = ImaggaAutoTag::Client.new(your_imagga_api_key)
+client = ImaggaAutoTag::Client.new(your_imagga_api_key, your_imagga_api_secret)
 results = client.fetch("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
 
 results.tags
@@ -47,3 +47,7 @@ results.to_csv
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Version
+
+**0.2.0** : Change the API endpoint and the way authentication is done.
