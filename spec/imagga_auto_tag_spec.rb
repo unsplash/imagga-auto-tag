@@ -5,7 +5,7 @@ describe "An Imagga Auto Tag API" do
   context "client" do
 
     before(:each) do
-      @client = ImaggaAutoTag::Client.new(ENV['IMAGGA_API_KEY'])
+      @client = ImaggaAutoTag::Client.new(ENV['IMAGGA_API_KEY'], ENV['IMAGGA_API_SECRET'])
     end
 
     it "connects" do
@@ -22,7 +22,7 @@ describe "An Imagga Auto Tag API" do
     
     before do
       VCR.use_cassette('image') do
-        @client = ImaggaAutoTag::Client.new(ENV['IMAGGA_API_KEY'])
+        @client = ImaggaAutoTag::Client.new(ENV['IMAGGA_API_KEY'], ENV['IMAGGA_API_SECRET'])
         @results = @client.fetch("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
       end
     end
