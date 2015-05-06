@@ -18,7 +18,7 @@ describe "An Imagga Auto Tag API" do
 
   end
 
-  context "result" do
+  context "successful result" do
     
     before do
       VCR.use_cassette('image') do
@@ -54,6 +54,33 @@ describe "An Imagga Auto Tag API" do
 
     it "converts tags into a comma delimitted string" do
       expect(@results.to_csv).to be_an_instance_of(String)
+    end
+
+  end
+
+  context "could not download image" do
+    
+    before do
+      VCR.use_cassette('no_download') do
+        @client = ImaggaAutoTag::Client.new(ENV['IMAGGA_API_KEY'], ENV['IMAGGA_API_SECRET'])
+        @results = @client.fetch("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+      end
+    end
+
+    it "returns a tagged image object" do
+      expect(@results).to be_an_instance_of(ImaggaAutoTag::TaggedImage)
+    end
+
+    it "has a status code" do
+      expect(@results.status).to be 200
+    end
+
+    it "does not have tags" do
+      expect(@results.tags).to be_empty
+    end
+
+    it "csv is empty string" do
+      expect(@results.to_csv).to eq ""
     end
 
   end
