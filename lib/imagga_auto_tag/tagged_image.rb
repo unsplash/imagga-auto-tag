@@ -11,6 +11,8 @@ module ImaggaAutoTag
       # { "results" => [{ "image" => "", "tags" => [{}, {}, {}] }] }
       body = JSON.parse(api_response.body)
 
+      raise ImaggaError.new(body['error']), body['message'] if body['status'] == 'error'
+
       @tags = []
 
       body['results'][0]['tags'].each do |tag|

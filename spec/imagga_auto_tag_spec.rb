@@ -58,4 +58,32 @@ describe "An Imagga Auto Tag API" do
 
   end
 
+  context "error" do
+    before do
+      @test = Faraday.new do |builder|
+        builder.adapter :test do |stub|
+          stub.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg") { |env| [403, {}, '{
+            "status": "error",
+            "message": "You have reached your monthly limits for this subscription. You can upgrade your subscription from your APIs dashboard after signing in on imagga.com. Thank you!",
+            "error": "monthly_limit_reached"
+        }'] }
+        end
+      end
+    end
+
+    it "raise an imagga error" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error ImaggaAutoTag::ImaggaError
+    end
+
+    it "contains an error type" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error { |error|
+                                                            expect(error.type).to eq "monthly_limit_reached"
+                                                         }
+    end
+  end
+
 end
