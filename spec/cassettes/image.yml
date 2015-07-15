@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - ! '*/*'
   response:
     status:
       code: 200
@@ -23,80 +23,80 @@ http_interactions:
       Access-Control-Allow-Methods:
       - GET
       Access-Control-Allow-Origin:
-      - "*"
+      - ! '*'
       Access-Control-Max-Age:
       - '60'
       Content-Type:
       - application/json
       Date:
-      - Tue, 14 Jul 2015 20:39:50 GMT
+      - Wed, 15 Jul 2015 19:31:59 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Set-Cookie:
-      - session=eyJyZXF1ZXN0X2lkIjp7IiBiIjoiT0RVMk16cGhZMk5mT0Raa016WmxZamM0WXpBMFl6TXcifX0.CIcFFg.tMNtFEzioRFJFyROygEkV_dKj6Q;
+      - session=eyJyZXF1ZXN0X2lkIjp7IiBiIjoiT0Rjek5qcGhZMk5mT0Raa016WmxZamM0WXpBMFl6TXcifX0.CIhGrw.-Lx4tcHHVxUlgTJLO1ndQV0KyJg;
         HttpOnly; Path=/
       Content-Length:
-      - '4362'
+      - '4368'
       Connection:
       - keep-alive
     body:
-      encoding: UTF-8
-      string: '{"results": [{"image": "http://static.ddmcdn.com/gif/landscape-photography-1.jpg",
-        "tags": [{"confidence": 61.70211881599366, "tag": "field"}, {"confidence":
-        61.28172233816168, "tag": "grass"}, {"confidence": 57.265845462470146, "tag":
-        "landscape"}, {"confidence": 56.90123150897144, "tag": "grassland"}, {"confidence":
-        54.89026479316623, "tag": "farming"}, {"confidence": 53.16876405235156, "tag":
-        "meadow"}, {"confidence": 52.82329099107585, "tag": "rural"}, {"confidence":
-        49.659719480049844, "tag": "sky"}, {"confidence": 49.25219255087008, "tag":
-        "country"}, {"confidence": 48.7264522288973, "tag": "farm"}, {"confidence":
-        48.44899550692299, "tag": "countryside"}, {"confidence": 47.29561870384466,
-        "tag": "cloud"}, {"confidence": 46.729327122126804, "tag": "horizon"}, {"confidence":
-        45.8367590140532, "tag": "summer"}, {"confidence": 43.14316090674616, "tag":
-        "agriculture"}, {"confidence": 42.60071227077546, "tag": "cloudy"}, {"confidence":
-        42.16948639950959, "tag": "clouds"}, {"confidence": 41.05013766897678, "tag":
-        "lawn"}, {"confidence": 40.99594427393362, "tag": "spring"}, {"confidence":
-        39.53044366782891, "tag": "weather"}, {"confidence": 37.49181876530288, "tag":
-        "land"}, {"confidence": 36.01569814191367, "tag": "outdoor"}, {"confidence":
-        35.88308259757868, "tag": "plain"}, {"confidence": 35.733923731698766, "tag":
-        "pasture"}, {"confidence": 34.505642426960364, "tag": "outside"}, {"confidence":
-        33.87658209665813, "tag": "cloudscape"}, {"confidence": 32.26870437955349,
-        "tag": "plant"}, {"confidence": 32.140323037910136, "tag": "season"}, {"confidence":
-        31.697871628599373, "tag": "sun"}, {"confidence": 31.64579171639256, "tag":
-        "scenic"}, {"confidence": 30.78669552701134, "tag": "sunlight"}, {"confidence":
-        29.648049642348603, "tag": "scene"}, {"confidence": 28.332778438386022, "tag":
-        "scenery"}, {"confidence": 26.575861439806268, "tag": "clear"}, {"confidence":
-        25.841434475695873, "tag": "sunny"}, {"confidence": 25.275809140980492, "tag":
-        "environment"}, {"confidence": 24.79037243238732, "tag": "grow"}, {"confidence":
-        23.89327136762259, "tag": "lea"}, {"confidence": 22.824653287484463, "tag":
-        "heavens"}, {"confidence": 22.44762589186863, "tag": "fields"}, {"confidence":
-        20.952569932252757, "tag": "crop"}, {"confidence": 20.55078064713296, "tag":
-        "tree"}, {"confidence": 20.476056258358923, "tag": "hill"}, {"confidence":
-        19.404539020780867, "tag": "wheat"}, {"confidence": 18.965069637598624, "tag":
-        "terrain"}, {"confidence": 17.9718733124639, "tag": "vista"}, {"confidence":
-        17.582896448987206, "tag": "natural"}, {"confidence": 16.845104031697993,
-        "tag": "afield"}, {"confidence": 16.452079359876965, "tag": "vegetation"},
-        {"confidence": 15.610472808699537, "tag": "autumn"}, {"confidence": 14.845563999199426,
-        "tag": "idyllic"}, {"confidence": 14.795954779858791, "tag": "colorful"},
-        {"confidence": 14.386937093945475, "tag": "day"}, {"confidence": 14.244656949306028,
-        "tag": "morning"}, {"confidence": 13.808277675253773, "tag": "fall"}, {"confidence":
-        13.728098043623657, "tag": "fresh"}, {"confidence": 13.038558020387173, "tag":
-        "outdoors"}, {"confidence": 13.020668621031357, "tag": "springtime"}, {"confidence":
-        12.492827823134524, "tag": "grass land"}, {"confidence": 12.410174129946531,
-        "tag": "wind"}, {"confidence": 11.628288981591364, "tag": "paradise"}, {"confidence":
-        11.285526753453684, "tag": "bright"}, {"confidence": 11.125112707775811, "tag":
-        "farmland"}, {"confidence": 10.98516184104112, "tag": "flora"}, {"confidence":
-        10.330781429357247, "tag": "wallpaper"}, {"confidence": 10.296061148599891,
-        "tag": "space"}, {"confidence": 10.251020162015175, "tag": "tranquil"}, {"confidence":
-        10.22774028341253, "tag": "panoramic"}, {"confidence": 9.802825593414857,
+      encoding: US-ASCII
+      string: ! '{"results": [{"image": "http://static.ddmcdn.com/gif/landscape-photography-1.jpg",
+        "tags": [{"confidence": 61.702118680513145, "tag": "field"}, {"confidence":
+        61.28172222566593, "tag": "grass"}, {"confidence": 57.265845367057445, "tag":
+        "landscape"}, {"confidence": 56.90123142063349, "tag": "grassland"}, {"confidence":
+        54.890264740819454, "tag": "farming"}, {"confidence": 53.16876395493892, "tag":
+        "meadow"}, {"confidence": 52.823290937338605, "tag": "rural"}, {"confidence":
+        49.65971936938819, "tag": "sky"}, {"confidence": 49.25219250290332, "tag":
+        "country"}, {"confidence": 48.726452111809515, "tag": "farm"}, {"confidence":
+        48.44899542049686, "tag": "countryside"}, {"confidence": 47.29561861138627,
+        "tag": "cloud"}, {"confidence": 46.72932701423294, "tag": "horizon"}, {"confidence":
+        45.83675892287009, "tag": "summer"}, {"confidence": 43.14316078835344, "tag":
+        "agriculture"}, {"confidence": 42.60071214263253, "tag": "cloudy"}, {"confidence":
+        42.16948635052252, "tag": "clouds"}, {"confidence": 41.05013755079742, "tag":
+        "lawn"}, {"confidence": 40.99594416349554, "tag": "spring"}, {"confidence":
+        39.530443554902824, "tag": "weather"}, {"confidence": 37.49181866881973, "tag":
+        "land"}, {"confidence": 36.01569807404432, "tag": "outdoor"}, {"confidence":
+        35.88308251195796, "tag": "plain"}, {"confidence": 35.733923622275086, "tag":
+        "pasture"}, {"confidence": 34.50564235205775, "tag": "outside"}, {"confidence":
+        33.876581973855465, "tag": "cloudscape"}, {"confidence": 32.268704322943854,
+        "tag": "plant"}, {"confidence": 32.14032297616942, "tag": "season"}, {"confidence":
+        31.697871533049362, "tag": "sun"}, {"confidence": 31.64579166844787, "tag":
+        "scenic"}, {"confidence": 30.78669545442953, "tag": "sunlight"}, {"confidence":
+        29.6480495443858, "tag": "scene"}, {"confidence": 28.332778390101428, "tag":
+        "scenery"}, {"confidence": 26.575861401081344, "tag": "clear"}, {"confidence":
+        25.84143440383588, "tag": "sunny"}, {"confidence": 25.275809073459488, "tag":
+        "environment"}, {"confidence": 24.79037238222505, "tag": "grow"}, {"confidence":
+        23.893271303421397, "tag": "lea"}, {"confidence": 22.824653214637202, "tag":
+        "heavens"}, {"confidence": 22.447625820955437, "tag": "fields"}, {"confidence":
+        20.952569879435952, "tag": "crop"}, {"confidence": 20.550780603456328, "tag":
+        "tree"}, {"confidence": 20.476056180226887, "tag": "hill"}, {"confidence":
+        19.404539030919643, "tag": "wheat"}, {"confidence": 18.965069614792903, "tag":
+        "terrain"}, {"confidence": 17.971873252353404, "tag": "vista"}, {"confidence":
+        17.58289640421283, "tag": "natural"}, {"confidence": 16.84510398537309, "tag":
+        "afield"}, {"confidence": 16.452079324057188, "tag": "vegetation"}, {"confidence":
+        15.610472770605798, "tag": "autumn"}, {"confidence": 14.845563933021836, "tag":
+        "idyllic"}, {"confidence": 14.795954743602254, "tag": "colorful"}, {"confidence":
+        14.386937034941486, "tag": "day"}, {"confidence": 14.244656948794391, "tag":
+        "morning"}, {"confidence": 13.808277625429492, "tag": "fall"}, {"confidence":
+        13.728098046252232, "tag": "fresh"}, {"confidence": 13.038557974874385, "tag":
+        "outdoors"}, {"confidence": 13.020668585104973, "tag": "springtime"}, {"confidence":
+        12.49282777989277, "tag": "grass land"}, {"confidence": 12.410174126790086,
+        "tag": "wind"}, {"confidence": 11.628288935039784, "tag": "paradise"}, {"confidence":
+        11.285526728283171, "tag": "bright"}, {"confidence": 11.125112680717741, "tag":
+        "farmland"}, {"confidence": 10.985161823039167, "tag": "flora"}, {"confidence":
+        10.330781404722561, "tag": "wallpaper"}, {"confidence": 10.296061114638729,
+        "tag": "space"}, {"confidence": 10.251020123513614, "tag": "tranquil"}, {"confidence":
+        10.22774027952617, "tag": "panoramic"}, {"confidence": 9.802825603941418,
         "tag": "cereal"}, {"confidence": 9.631103847868074, "tag": "savanna"}, {"confidence":
-        9.28517823627505, "tag": "flower"}, {"confidence": 9.0117875501568, "tag":
-        "forest"}, {"confidence": 8.743421825520866, "tag": "idyll"}, {"confidence":
-        8.031478300455241, "tag": "color"}, {"confidence": 7.927716775038047, "tag":
-        "yellow"}, {"confidence": 7.883652590667842, "tag": "mountain"}, {"confidence":
-        7.686690586887015, "tag": "non urban"}, {"confidence": 7.424505824290661,
-        "tag": "sunrise"}, {"confidence": 7.218921642728478, "tag": "wood"}, {"confidence":
-        7.173061787060598, "tag": "park"}, {"confidence": 7.035910189604972, "tag":
+        9.285178232028295, "tag": "flower"}, {"confidence": 9.01178750635982, "tag":
+        "forest"}, {"confidence": 8.743421806740507, "tag": "idyll"}, {"confidence":
+        8.03147827394484, "tag": "color"}, {"confidence": 7.927716780845509, "tag":
+        "yellow"}, {"confidence": 7.883652575751765, "tag": "mountain"}, {"confidence":
+        7.686690553377295, "tag": "non urban"}, {"confidence": 7.424505826068606,
+        "tag": "sunrise"}, {"confidence": 7.218921602981326, "tag": "wood"}, {"confidence":
+        7.173061749447741, "tag": "park"}, {"confidence": 7.035910183340762, "tag":
         "growth"}]}]}'
     http_version: 
-  recorded_at: Tue, 14 Jul 2015 20:40:02 GMT
+  recorded_at: Wed, 15 Jul 2015 19:32:02 GMT
 recorded_with: VCR 2.9.3

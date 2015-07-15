@@ -5,17 +5,21 @@ module ImaggaAutoTag
     attr_reader :status, :tags
 
     def initialize(api_response)
+
       # The response from Imagga is now wrap in a results envelop
       #
       # ==== Result
+      # success:
       # { "results" => [{ "image" => "", "tags" => [{}, {}, {}] }] }
+      # failure:
+      # { "results" => [], "unsuccessful" => [{ "image" => url, "message" => msg }]}
       body = JSON.parse(api_response.body)
 
       raise ImaggaError.new(body['type']), body['message'] unless api_response.status.between?(200, 299)
 
       @tags = []
 
-      body['results'][0]['tags'].each do |tag|
+      (body['results'][0] || {}).fetch('tags', []).each do |tag|
         @tags.push Tag.new(tag)
       end
 
@@ -29,7 +33,7 @@ module ImaggaAutoTag
     end
 
     def to_csv
-      @tags.collect { |t| t.name }.join(',')
+      @tags.collect(&:name).join(',')
     end
 
   end
