@@ -64,9 +64,13 @@ describe "An Imagga Auto Tag API" do
         builder.adapter :test do |stub|
           stub.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg") { |env| [403, {}, '{
             "status": "error",
-            "message": "You have reached your monthly limits for this subscription. You can upgrade your subscription from your APIs dashboard after signing in on imagga.com. Thank you!",
-            "error": "monthly_limit_reached"
-        }'] }
+            "message": "You have reached your monthly limits for this subscription.",
+            "type": "monthly_limit_reached"
+          }'] }
+          stub.get("http://static.ddmcdn.com/gif/landscape-photography-2.jpg") { |env| [403, {}, '{
+            "status": "error",
+            "message": "You have reached your monthly limits for this subscription."
+          }'] }
         end
       end
     end
@@ -74,14 +78,23 @@ describe "An Imagga Auto Tag API" do
     it "raise an imagga error" do
       resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
 
-      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error ImaggaAutoTag::ImaggaError
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error ImaggaAutoTag::ImaggaError,
+                                                                     "You have reached your monthly limits for this subscription."
     end
 
-    it "contains an error type" do
+    it "contains stirng as an error type" do
       resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
 
       expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error { |error|
                                                             expect(error.type).to eq "monthly_limit_reached"
+                                                         }
+    end
+
+    it "contains nil as an error type" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-2.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error { |error|
+                                                           expect(error.type).to eq nil
                                                          }
     end
   end

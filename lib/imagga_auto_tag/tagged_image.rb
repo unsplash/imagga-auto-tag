@@ -11,7 +11,7 @@ module ImaggaAutoTag
       # { "results" => [{ "image" => "", "tags" => [{}, {}, {}] }] }
       body = JSON.parse(api_response.body)
 
-      raise ImaggaError.new(body['error']), body['message'] if body['status'] == 'error'
+      raise ImaggaError.new(body['type']), body['message'] unless api_response.status.between?(200, 299)
 
       @tags = []
 
