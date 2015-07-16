@@ -58,6 +58,47 @@ describe "An Imagga Auto Tag API" do
 
   end
 
+  context "results with error" do
+    before do
+      @test = Faraday.new do |builder|
+        builder.adapter :test do |stub|
+          stub.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg") { |env| [403, {}, '{
+            "status": "error",
+            "message": "You have reached your monthly limits for this subscription.",
+            "type": "monthly_limit_reached"
+          }'] }
+          stub.get("http://static.ddmcdn.com/gif/landscape-photography-2.jpg") { |env| [403, {}, '{
+            "status": "error",
+            "message": "You have reached your monthly limits for this subscription."
+          }'] }
+        end
+      end
+    end
+
+    it "raise an imagga error" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error ImaggaAutoTag::ImaggaError,
+                                                                     "You have reached your monthly limits for this subscription."
+    end
+
+    it "contains stirng as an error type" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-1.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error { |error|
+                                                            expect(error.type).to eq "monthly_limit_reached"
+                                                         }
+    end
+
+    it "contains nil as an error type" do
+      resp = @test.get("http://static.ddmcdn.com/gif/landscape-photography-2.jpg")
+
+      expect { ImaggaAutoTag::TaggedImage.new(resp) }.to raise_error { |error|
+                                                           expect(error.type).to eq nil
+                                                         }
+    end
+  end
+
   context "could not download image" do
     
     before do
