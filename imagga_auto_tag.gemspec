@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Luke Chesser"]
   spec.email         = ["luke@unsplash.com"]
   spec.summary       = %q{Simple wrapper around the Imagga Auto Tagging API}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/crewlabs/imagga_auto_tag/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
