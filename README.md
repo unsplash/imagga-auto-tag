@@ -1,5 +1,7 @@
 # ImaggaAutoTag
 
+[![](https://travis-ci.org/unsplash/imagga-auto-tag.svg?&branch=master)](https://travis-ci.org/unsplash/imagga-auto-tag)
+
 Ruby client for fetching tags for an image using the [Imagga Auto Tagging API](http://imagga.com/solutions/auto-tagging.html).
 
 ## Installation

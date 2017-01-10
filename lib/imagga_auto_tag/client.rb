@@ -1,11 +1,9 @@
 require 'base64'
 
 module ImaggaAutoTag
-  
   class Client
-
-    IMAGGA_API_BASE_URL = "https://api.imagga.com"
-    IMAGGA_API_TAG_PATH = "/v1/tagging"
+    IMAGGA_API_BASE_URL = 'https://api.imagga.com'.freeze
+    IMAGGA_API_TAG_PATH = '/v1/tagging'.freeze
 
     attr_reader :response
 
@@ -32,11 +30,9 @@ module ImaggaAutoTag
     # client = ImaggaAutoTag::Client.new(api_key, api_secret)
     # client.fetch(image_url_string)
     def fetch(url)
-      @response = @conn.get IMAGGA_API_TAG_PATH, {url: url}
+      @response = @conn.get IMAGGA_API_TAG_PATH, url: url
 
       TaggedImage.new(@response)
     end
-
   end
-
 end

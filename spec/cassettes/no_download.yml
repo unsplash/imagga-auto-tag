@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.imagga.com/v1/tagging?url=http://static.ddmcdn.com/gif/landscape-photography-1.jpg
+    uri: https://api.imagga.com/v1/tagging?url=http://static.ddmcdn.com/NOT_REAL.jpg
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.10.0
+      Authorization:
+      - Basic YWNjX2QzNTU2ZmJmMGY4NjdiNTpiNTFmOTgxYzM4ZTVlZTE0ZTVhYjM0ZmEzNjQwNGY3Mg==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,19 +31,26 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 06 May 2015 19:44:17 GMT
+      - Thu, 15 Dec 2016 19:36:38 GMT
+      Monthly-Limit:
+      - '2000'
+      Monthly-Limit-Remaining:
+      - '1994'
+      Monthly-Limit-Reset:
+      - '1484507658'
       Server:
-      - nginx/1.4.6 (Ubuntu)
+      - nginx/1.9.15
       Set-Cookie:
-      - session=eyJyZXF1ZXN0X2lkIjp7IiBiIjoiTXpRM09EcGhZMk5mT0Raa016WmxZamM0WXpBMFl6TXcifX0.CCwAkQ.8QdcpHTw7p_0cKyNo2s5Sp-PE50;
-        HttpOnly; Path=/
+      - session=eyJyZXF1ZXN0X2lkIjpudWxsfQ.CzSCRg.m_aET9ENdOrwIxhVX2CNZJ3imag; HttpOnly;
+        Path=/
       Content-Length:
-      - '184'
+      - '147'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"results":[],"unsuccessful":[{"image":"https://unsplash.imgix.net/test-photo-21?q=75&fm=jpg&w=1080&fit=max&s=5d249291d47454d1c7bfac41318df561","message":"Could not download image."}]}'
+      string: '{"results": [], "unsuccessful": [{"image": "http://static.ddmcdn.com/NOT_REAL.jpg",
+        "message": "Could not download URL. Request status code 404"}]}'
     http_version: 
-  recorded_at: Wed, 06 May 2015 19:43:07 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Thu, 15 Dec 2016 19:36:38 GMT
+recorded_with: VCR 3.0.3

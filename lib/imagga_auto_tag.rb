@@ -1,7 +1,7 @@
-require "faraday"
-require "json"
-require "imagga_auto_tag/version"
-require "imagga_auto_tag/client"
-require "imagga_auto_tag/tagged_image"
-require "imagga_auto_tag/tag"
-require "imagga_auto_tag/imagga_error"
+require 'faraday'
+require 'json'
+require 'imagga_auto_tag/version'
+require 'imagga_auto_tag/client'
+require 'imagga_auto_tag/tagged_image'
+require 'imagga_auto_tag/tag'
+require 'imagga_auto_tag/imagga_error'
