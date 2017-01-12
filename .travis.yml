@@ -1,0 +1,14 @@
+rvm:
+- 2.3.0
+language: ruby
+deploy:
+  provider: rubygems
+  api_key:
+    secure: P6IxTlvw3/UHpByeDkkun+APYvCzPgLhJWuPx+tg4LBRHD3dMAqLdeXufZmhOgSkL6NvTocTOZik04Ilw9/vI1IYKRT6alRpPDHdsx0MnrI9Rs6OXdkIpLga/s7MeuRSI3nIzR0ioDYjjiverdDweujtRetG7rxwCygu52A7OGI=
+  gem: imagga-auto-tag
+  on:
+    tags: true
+    repo: unsplash/imagga-auto-tag
+env:
+  global:
+    secure: IuQTRlcwjHgRty3TNQHdDNE9NSQA4OrNjS34eD9i1aTstRzhRyYyVOJvCGSo5T8dWClLnx4TTAC73xY+QGXaHNqce9ZzKBI8QCzGAp/h9Z++/Quv67Vtn0a+HhYSScWpGAp+Rz3sGFq9Q8Yu58KTDLnZF0SUvIURzCpBF+36R6k=
