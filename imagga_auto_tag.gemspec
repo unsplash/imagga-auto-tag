@@ -6,8 +6,8 @@ require 'imagga_auto_tag/version'
 Gem::Specification.new do |spec|
   spec.name          = 'imagga_auto_tag'
   spec.version       = ImaggaAutoTag::VERSION
-  spec.authors       = ['Luke Chesser']
-  spec.email         = ['luke@unsplash.com']
+  spec.authors       = ['Luke Chesser', 'Unsplash Team']
+  spec.email         = ['dev@unsplash.com']
   spec.summary       = 'Simple wrapper around the Imagga Auto Tagging API'
   spec.homepage      = 'https://github.com/crewlabs/imagga_auto_tag/'
   spec.license       = 'MIT'
