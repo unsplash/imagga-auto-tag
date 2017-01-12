@@ -5,7 +5,7 @@ deploy:
   provider: rubygems
   api_key:
     secure: P6IxTlvw3/UHpByeDkkun+APYvCzPgLhJWuPx+tg4LBRHD3dMAqLdeXufZmhOgSkL6NvTocTOZik04Ilw9/vI1IYKRT6alRpPDHdsx0MnrI9Rs6OXdkIpLga/s7MeuRSI3nIzR0ioDYjjiverdDweujtRetG7rxwCygu52A7OGI=
-  gem: imagga-auto-tag
+  gem: imagga_auto_tag
   on:
     tags: true
     repo: unsplash/imagga-auto-tag
